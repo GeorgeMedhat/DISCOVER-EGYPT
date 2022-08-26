@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>Discover EGYPT</title>
+<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="split-screen">
+            <div class="left">
+                <section class="copy">
+                    <h1>Discover<br><strong>EGYPT</strong></h1>
+                    <p>EGYPT may be known for ancient treasures and rich history,<br>
+                        but there is more to this nation than you might expect.<br>
+                        From surreal waters and golden sand beaches to remarkable architecture<br>
+                         and natural therapies.<br> 
+                        Egypt is worthy of your <em> bucket list</em></p>
+                </section>
+
+
+            </div>
+            <div class="right">
+                <form action="login.html">
+                    <section class="copy">
+                    <h2>Login Here <img src="4.png" class="m"></h2>
+    
+
+                        <div class="email-cont">
+                        <label for="Email">E-mail</label>
+                    <input type="email" name="email" id="email"   required placeholder="Enter Email Here..">
+                        </div>
+
+                    <div class="pass-cont">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="pass" required placeholder="Enter Password Here..">
+                    
+                    </div>
+
+                    <div class="login-cont">
+                        <input type="submit"  onclick="addData()" value="login"><br class="b">
+                    </div>
+                    
+
+                    <p class="link">Don't have an account ?<br class="b">
+                    <a href="#">Register </a> here<br>or</a></p>
+                    <p class="liw">Log in with</p>
+                    <div class="icons">
+                        <a href="www.facebook.com"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="www.instagram.com"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="www.google.com"><ion-icon name="logo-google"></ion-icon></a>
+                    </div>
+                    </section>
+                </form>
+                   
+        </div>
+  
+        <script src="registeration.js"></script>
+    
+    </div>
+    <script>
+        function signin(e) {
+            let email=document.getElementById('email').value, pass=document.getElementById('pass').value;
+            let formdata = JSON.parse(localStorage.getItem('formdata')) || [];
+            let exist = formdata.length && 
+            JSON.parse(localStorage.getItem('formdata')).some(data => data.email.toLowerCase() == email && data.pass.toLowerCase() == pass);
+            if(!exist){
+                alert("Incorrect login credentials")
+            }
+            else{
+                location.href ="/index.html";
+            }
+        }
+      </script>
+
+
+
+            
+
+    </body>
+</html>

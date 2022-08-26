@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>login</title>
+<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="split-screen">
+            <div class="left">
+                <section class="copy">
+                    <h1>Discover<br><strong>EGYPT</strong></h1>
+                    <p>EGYPT may be known for ancient treasures and rich history,<br>
+                        but there is more to this nation than you might expect.<br>
+                        From surreal waters and golden sand beaches to remarkable architecture<br>
+                         and natural therapies.<br> 
+                        Egypt is worthy of your <em> bucket list</em></p>
+                </section>
+
+
+            </div>
+            <div class="right">
+        <form action="login.html">
+            <section class="copy">
+            <h2>Login Here <img src="4.png" class="m"></h2>
+
+
+                <div class="email-cont">
+                <label for="username">Username</label>
+            <input type="email" name="username" id="username"   required placeholder="Enter username Here..">
+                </div>
+
+            <div class="pass-cont">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="pass" required placeholder="Enter Password Here..">
+            
+            </div>
+
+            <div class="login-cont">
+                <input type="submit"  onclick="checkData()"  value="login" id="btn"><br class="b">
+            </div>
+            --------------------------------
+
+            <p class="link">Don't have an account ?<br class="b">
+            <a href="../project/register.html">Register </a> here<br>or</a></p>
+            <p class="liw">Log in with</p>
+            <div class="icons">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+            </div>
+            </section>
+        </form>
+        <script src="login.js"></script>
+    </body>
+</html>

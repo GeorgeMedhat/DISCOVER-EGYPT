@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Food</title>
+    <link rel="shortcut icon" href="Logo.png" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=EB+Garamond:ital,wght@0,500;1,800&display=swap');
+
+        
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(background.jpeg);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .generalcontainer {
+
+            padding: 20px 80px;
+            width: 100%;
+            margin: 0 auto;
+            height: 1000px;
+
+
+        }
+
+        #container {
+            box-shadow: 0 15px 30px 1px grey;
+            background: rgba(255, 255, 255, 0.90);
+            text-align: center;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 8em auto;
+            height: 400px;
+            width: 90%;
+        }
+
+
+
+        .product-details {
+            position: relative;
+            text-align: left;
+            overflow: hidden;
+            padding: 30px;
+            height: 100%;
+            float: left;
+            width: 40%;
+        }
+
+        #container .product-details h1 {
+            font-family: 'Bebas Neue', cursive;
+            display: inline-block;
+            position: relative;
+            font-size: 30px;
+            color: #344055;
+            margin: 0;
+            text-decoration: underline darkorange;
+
+        }
+
+        #container .product-details h1:before {
+            position: absolute;
+            content: '';
+            right: 0%;
+            top: 0%;
+            transform: translate(25px, -15px);
+            font-family: 'Bree Serif', serif;
+            display: inline-block;
+            background: #ffe6e6;
+            border-radius: 5px;
+            font-size: 14px;
+            padding: 5px;
+            color: white;
+            margin: 0;
+            animation: chan-sh 6s ease infinite;
+
+        }
+
+
+        #container .product-details>p {
+            font-family: 'EB Garamond', serif;
+            text-align: center;
+            font-size: 18px;
+            color: #7d7d7d;
+
+        }
+
+        .product-image {
+            transition: all 0.3s ease-out;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            float: right;
+            width: 45%;
+            display: inline-block;
+        }
+
+        #container img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .info {
+            background: rgba(27, 26, 26, 0.9);
+            font-family: 'Times New Roman', Times, serif;
+            transition: all 0.3s ease-out;
+            transform: translateX(-100%);
+            position: absolute;
+            line-height: 1.8;
+            text-align: left;
+            font-size: 105%;
+            cursor: no-drop;
+            color: #FFF;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+
+        .info h2 {
+            text-align: center;
+        }
+
+        .info h3 {
+            text-align: center;
+        }
+
+        .product-image:hover .info {
+            transform: translateX(0);
+        }
+
+        .info ul li {
+            transition: 0.3s ease;
+            padding-left: 30px;
+        }
+
+        .info ul li:hover {
+            transform: translateX(50px) scale(1.3);
+        }
+
+        .product-image:hover img {
+            transition: all 0.3s ease-out;
+        }
+
+        .product-image:hover img {
+            transform: scale(1.2, 1.2);
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
+*{
+	margin:0px;
+	padding:0px;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+nav{
+	width: 100%;
+	height: 75px;
+	background-color: black;
+	line-height: 75px;
+	padding:0px 100px;
+	position:fixed;
+	z-index: 1;
+}
+nav .logo{
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: 1.5px; 
+}
+nav .logo p{
+	float: left;
+	color:darkorange;
+	text-transform: uppercase;
+}
+nav ul{
+	float: right;
+}
+nav ul li{
+	display: inline-block;
+	list-style: none;
+}
+nav ul li a{
+	color:white;
+	text-decoration: none;
+	font-size: 18px;
+	text-transform: uppercase;
+	padding:0px 32px;
+}
+nav ul li a:hover{
+	color:darkorange;
+}
+nav ul li .active{
+	color:darkorange;
+}
+    </style>
+</head>
+
+<body>
+    <nav>
+		<div class="logo">
+			<p>Discover Egypt</p>
+		</div>
+		<ul>
+			<li><a href="../main page/index.html" >Home</a></li>
+				<li><a href="../Hotels/Hotels.html" >Hotels</a></li>
+				<li><a href="../Food/food.html"class="active">Food</a></li>
+				<li><a href="../Historical places/index.html">Historical Places</a></li>
+				<li><a href="../Places/index nour.html">Places And Activities</a></li>
+				<li><a href="../Login/login.html">Logout</a></li>
+		</ul>
+	</nav>
+    <br>
+    <div class="generalcontainer">
+        <div id="container">
+            <div class="product-details">
+                <h1>Ful medames and Ta‘meya </h1>
+
+                <p class="information">
+                    Ful is cooked fava beans served with olive oil and topped with cumin. It is always eaten with bread,
+                    in a
+                    sandwich or the bread is used as a utensil, to scoop up the beans. A staple in Egypt, it is often
+                    considered the national dish.a breakfast dish of deep-fried fritters made out of fava beans, in
+                    contrast to the Levantine version of falafel made with chickpeas. Often eaten by themselves or in a
+                    pita bread sandwich with tehina and greens.
+                    <br>
+                </p>
+
+            </div>
+
+            <div class="product-image">
+
+                <img src="fool.jpeg" alt="">
+
+
+                <div class="info">
+                    <h2> Main dishes</h2>
+                    <h3> Top 5 places</h3>
+                    <ul>
+                        <li><strong> Am Waheed :: For location <a href="https://goo.gl/maps/pvKYudghHRnLnHbJA"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Nasser El Faiomy :: For location <a href="https://goo.gl/maps/9wGRdYswC8xHpvVw7"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> El Shabrawy :: For location <a href="https://goo.gl/maps/AHMMuURzuD9Zzan59"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Nagaf :: For location <a href="https://goo.gl/maps/hFgqtk26AYu7deao8"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Gad :: For location <a href="https://goo.gl/maps/vmbWKCtTb9HTufPv6"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div id="container">
+            <div class="product-details">
+                <h1>Koshary</h1>
+
+                <p class="information">
+                    An Egyptian dish originally made in the 19th century, made of rice, macaroni and lentils mixed
+                    together, topped with a spiced tomato sauce, and garlic vinegar; garnished with chickpeas and crispy
+                    fried onions. A sprinkling of garlic juice, or garlic vinegar, and hot sauce are optional. It is a
+                    popular street food.
+                    <br>
+                </p>
+
+            </div>
+
+            <div class="product-image">
+
+                <img src="koushari.jpg" alt="">
+
+
+                <div class="info">
+                    <h2> Main dishes</h2>
+                    <h3> Top 5 places</h3>
+                    <ul>
+                        <li><strong> Sayed Hanafy :: For location <a href="https://goo.gl/maps/AFd3CpfubJq4bQ598"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Abo Tarek :: For location <a href="https://goo.gl/maps/JmfMTmy9mGwCYWYp9"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Hend :: For location <a href="https://goo.gl/maps/TnG9UELJXMsozMyA7"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Eshta :: For location <a href="https://goo.gl/maps/4CbA5szScDab5dw78"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Tom and basal :: For location <a href="https://goo.gl/maps/CWMXrbeyvUBJFuLj6"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div id="container">
+            <div class="product-details">
+                <h1>Mulukhiyah</h1>
+
+                <p class="information">
+                    Green soup prepared in various styles, wherein the mallow leaves are very finely chopped, with
+                    ingredients such as garlic and coriander added for a characteristic aromatic taste, then cooked with
+                    chicken broth. Other kinds of broths can be used such as rabbit, shrimp, which is popular in
+                    Alexandria, and fish in Port Said. It is often considered the country's national dish.
+                    <br>
+                </p>
+
+            </div>
+
+            <div class="product-image">
+
+                <img src="molokheya.jpeg" alt="">
+
+
+                <div class="info">
+                    <h2> Main dishes</h2>
+                    <h3> Top 5 places</h3>
+                    <ul>
+                        <li><strong> Sobhy Kaber :: For location <a href="https://g.page/SobhiKaber?share"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Om Hassan :: For location <a href="https://g.page/DawarOmHassan-Mohandseen?share"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> El Hadra :: For location <a href="https://g.page/Elhadra-restaurant?share"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Seekh Mashwy :: For location <a href="https://g.page/SeekhMashwy?share"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Estacoza :: For location <a href="https://goo.gl/maps/3AT9cPD4jDNeZ34t8"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div id="container">
+            <div class="product-details">
+                <h1>Mahshi</h1>
+
+                <p class="information">
+                    A stuffing of rice, seasoned with crushed red tomatoes, onion, parsley, dill, salt, pepper and
+                    spices, put into vegetables like green peppers, eggplants, courgettes, tomatoes, grape or cabbage
+                    leaves. They're then placed in a pot and topped with chicken broth or beef broth.
+                    <br>
+                </p>
+
+            </div>
+
+            <div class="product-image">
+
+                <img src="mahshy.jpg" alt="">
+
+
+                <div class="info">
+                    <h2> Main dishes</h2>
+                    <h3> Top 5 places</h3>
+                    <ul>
+                        <li><strong> Hosny :: For location <a href="https://goo.gl/maps/ey4ExWiT5RsdPBTJ7"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> El Dahan:: For location <a href="https://g.page/eldahanelmarghany?share"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Shiekh El Mandy :: For location <a href="https://goo.gl/maps/R3y6XBpBRxLdXsEZA"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Farahat :: For location <a href="https://goo.gl/maps/pucaAj9o5JEL8pBq7"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Sobhy Kaber :: For location <a href="https://g.page/SobhiKaber?share"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div id="container">
+            <div class="product-details">
+                <h1>Hamam mahshi</h1>
+
+                <p class="information">
+                    Pigeon stuffed with rice or green wheat and herbs. First it is boiled until cooked, then roasted or
+                    grilled.
+                    <br>
+                </p>
+
+            </div>
+
+            <div class="product-image">
+
+                <img src="hamam.jpg" alt="">
+
+
+                <div class="info">
+                    <h2> Main dishes</h2>
+                    <h3> Top 5 places</h3>
+                    <ul>
+                        <li><strong> Seekh Mashwy :: For location <a href="https://g.page/SeekhMashwy?share"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Hadramoot Antar :: For location <a href="https://goo.gl/maps/NKgocF9vJUQMGzeFA"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Hosny :: For location <a href="https://goo.gl/maps/ey4ExWiT5RsdPBTJ7"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> EL Haty :: For location <a href="https://goo.gl/maps/o2kPBQAqZcxYyCff6"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Studio Misr :: For location <a href="https://goo.gl/maps/K31K7Jn771joRRvy6"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div id="container">
+            <div class="product-details">
+                <h1>kabab w kofta</h1>
+
+                <p class="information">
+                    Kabab is usually chopped and minced lamb meat on skewers grilled over charcoal.
+                    Kofta is minced meat prepared with spices and parsley, rolled into a finger-shape and grilled over
+                    charcoal.
+                    <br>
+                </p>
+
+            </div>
+
+            <div class="product-image">
+
+                <img src="kabab w mahshy.jpg" alt="">
+
+
+                <div class="info">
+                    <h2> Main dishes</h2>
+                    <h3> Top 5 places</h3>
+                    <ul>
+                        <li><strong> Sobhy Kaber :: For location <a href="https://g.page/SobhiKaber?share"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> El Dahan:: For location <a href="https://g.page/eldahanelmarghany?share"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Abo Shaara :: For location <a href="https://goo.gl/maps/jmCYGyaEiZyxDby2A"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Shiekh El Mandy :: For location <a href="https://goo.gl/maps/R3y6XBpBRxLdXsEZA"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Farahat :: For location <a href="https://goo.gl/maps/pucaAj9o5JEL8pBq7"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--/////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////// 
+            ////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////-->
+        <div id="container">
+            <div class="product-details">
+                <h1>Basbousa</h1>
+
+                <p class="information">
+                    A dessert made from semolina and soaked in syrup. It is usually topped with almonds and
+                    traditionally cut vertically into pieces so that each piece has a diamond shape.
+                    <br>
+                </p>
+
+            </div>
+
+            <div class="product-image">
+
+                <img src="basbousa1.jpg" alt="">
+
+
+                <div class="info">
+                    <h2> Desserts</h2>
+                    <h3> Top 5 places</h3>
+                    <ul>
+                        <li><strong> La Poire :: For location <a href="https://goo.gl/maps/KFMz5NCtJC3FY5Ns7"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Etoile :: For location <a href="https://goo.gl/maps/FbniZGP5uW4yzBUc7"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> El Abd :: For location <a href="https://goo.gl/maps/ETSDe9tR18sM9DPT6"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Basbousa w konafa :: For location <a href="https://goo.gl/maps/RbqzYKCPG4HiCSdP8"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Salé Sucré :: For location <a href="https://g.page/salesucreroxy?share"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div id="container">
+            <div class="product-details">
+                <h1>Kunafa</h1>
+
+                <p class="information">
+                    A sweet cheese pastry soaked in sugar syrup. Luqmet el qadi (لقمة القاضي) are small, round donuts
+                    that are crunchy on the outside and soft and syrupy on the inside. They are often served with dusted
+                    cinnamon and powdered sugar. The name literally translates to "The Judge's Bite".
+                    <br>
+                </p>
+
+            </div>
+
+            <div class="product-image">
+
+                <img src="konafa1.jpg" alt="">
+
+
+                <div class="info">
+                    <h2> Desserts</h2>
+                    <h3> Top 5 places</h3>
+                    <ul>
+                        <li><strong> La Poire :: For location <a href="https://goo.gl/maps/KFMz5NCtJC3FY5Ns7"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Etoile :: For location <a href="https://goo.gl/maps/FbniZGP5uW4yzBUc7"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> El Abd :: For location <a href="https://goo.gl/maps/ETSDe9tR18sM9DPT6"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Basbousa w konafa :: For location <a href="https://goo.gl/maps/RbqzYKCPG4HiCSdP8"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Salé Sucré :: For location <a href="https://g.page/salesucreroxy?share"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div id="container">
+            <div class="product-details">
+                <h1>Om Ali</h1>
+
+                <p class="information">
+                    A type of bread pudding served hot made puff pastry or rice, milk, coconut, and raisins.
+                    <br>
+                </p>
+
+            </div>
+
+            <div class="product-image">
+
+                <img src="om ali.jpg" alt="">
+
+
+                <div class="info">
+                    <h2> Desserts</h2>
+                    <h3> Top 5 places</h3>
+                    <ul>
+                        <li><strong> La Poire :: For location <a href="https://goo.gl/maps/KFMz5NCtJC3FY5Ns7"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> EL Shiekh Wafik :: For location <a href="https://goo.gl/maps/HiCBPs5zEUJwb8Gi9"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> El Abd :: For location <a href="https://goo.gl/maps/ETSDe9tR18sM9DPT6"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Etoile :: For location <a href="https://goo.gl/maps/FbniZGP5uW4yzBUc7"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Salé Sucré :: For location <a href="https://g.page/salesucreroxy?share"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div id="container">
+            <div class="product-details">
+                <h1>Atayef</h1>
+
+                <p class="information">
+                    A dessert served exclusively during the month of Ramadan, a sort of sweet mini pancake (made without
+                    eggs) filled with cream or nuts and raisins.
+                    <br>
+                </p>
+
+            </div>
+
+            <div class="product-image">
+
+                <img src="atayef1.png" alt="">
+
+
+                <div class="info">
+                    <h2> Desserts</h2>
+                    <h3> Top 5 places</h3>
+                    <ul>
+                        <li><strong> Etoile :: For location <a href="https://goo.gl/maps/FbniZGP5uW4yzBUc7"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Salé Sucré :: For location <a href="https://g.page/salesucreroxy?share"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> El Abd :: For location <a href="https://goo.gl/maps/ETSDe9tR18sM9DPT6"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> Etoile :: For location <a href="https://goo.gl/maps/FbniZGP5uW4yzBUc7"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                        <li><strong> La Poire :: For location <a href="https://goo.gl/maps/KFMz5NCtJC3FY5Ns7"
+                                    target="_blank">Click
+                                    here</a></strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+
+</body>
+
+</html>

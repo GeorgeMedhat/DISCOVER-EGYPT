@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>register-discover egypt</title>
+    <script type="text/javascript">
+
+    </script>
+    <style media="screen">
+   
+   #email,#confirmemail{
+width: 37%;
+
+}
+
+body{
+  background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(background.jpeg);
+	background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+
+
+}
+input{
+  margin: 5px;
+  padding: 3px;
+  border: 0.5px solid black;
+  border-radius: 5px;
+}
+.text{
+  font-size: 17px;
+}
+#container{
+  max-width: 600px;
+  max-height: 7200px;
+  width: 100%;
+  background:#F98B00;
+  padding: 20px;
+  margin: 30px;
+  border-radius: 40px;
+  margin-left: 650px;
+}
+#register{
+  font-size: 25px;
+ font-weight: 500;
+ 
+}
+#register::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background-color:purple ;
+
+}
+form{
+font-size: 15px;
+}
+input{
+  margin: 15px;
+}
+button
+{
+  color: #FFA22F;
+  font-size: 20px;
+  background-color:black;
+  text-size-adjust: 10px;
+
+  margin-top: 30px;
+  margin-left: 200px ;
+width: 200px;
+height: 50px;
+border-radius: 25px;
+}
+.error{
+  color: red;
+}
+ 
+
+
+
+
+    </style>
+    
+  </head>
+
+  <body >
+<div id="container">
+  <div id="register">Registeration</div>
+  <form >
+    <div id="user details">
+      <span class="text">Username: </span> 
+      <input type="text" name="" id="username" placeholder="enter your username">
+      <br>
+      <span class="error" id="username error"></span>
+      <br>
+      <table>
+        <tr>
+      <span class="text">First Name:</span>
+      <input type="text" name="" id="firstname" placeholder="enter your first name">
+      <span class="text">Last Name :</span> 
+      <input type="text" id="lastname" placeholder="enter your last name">
+      </tr>
+      <td><span class="error" id="firstname error"></span></td>
+      <td id="lastname error"></td>
+      </table>
+      
+     <span class="text"> Email:</span>
+      <input type="text" id="email" placeholder="enter your email">
+      <br>
+      <span class="error" id="email error"></span>
+      <br>
+      <span class="text">Confirm Email : </span>
+      <input type="text" id="confirm email" placeholder="confirm your email">
+      <br>
+      <span class="error" id="confrimemailerror"></span>
+      <br>
+      
+      <span class="text">Phone Number:</span>
+      <input type="text" id="phonenumber" placeholder="enter your phone number">
+      <br>
+      <span class="error" id="phonenumber error"></span>
+      <br>
+    <span class="text">  Date Of Birth:</span>
+      <input type="date" name="" id="dateofbirth">
+      <br>
+      <span class="error" id="date error"></span>
+      <br>
+      <span class="text">Password: </span>
+      <input type="password" name="" id="password" placeholder="enter your password">
+      <br>
+      <span class="error" id="password error"></span>
+      <br>
+      <span class="text">Confirm Password:</span> 
+      <input type="password" id="confirm password" placeholder="confirm your password">
+      <br>
+      <span class="error" id="confirmpassworderror"></span>
+      <br>
+      
+      <span>Gender:</span>
+      <br> 
+      <span class="text">Male :</span><input type="radio" name="gender" id="">
+     <span class="text">Female: </span><input type="radio" name="gender">
+      <span class="text">Prefer Not To Say:</span> 
+      <input type="radio" name="gender">
+      <br>
+    <button type="submit" id="Register" onclick="validation()">Register</button>
+      
+    </div>
+  </form>
+</div>
+<script src="./register.js" type="module"></script>
+  <script >
+   
+    // var form=document.getElementById('form')
+    // var username = document.getElementById("username");
+    // var usernameerror = document.getElementById('username error').value;
+    // var firstname = document.getElementById('firstname').value;
+    // var firstnameerror = document.getElementById('firstname error').value;
+    // var lastname = document.getElementById('lastname').value;
+    // var lastnameerror = document.getElementById('lastname error').value;
+    // var email = document.getElementById('email').value;
+    // var emailerror = document.getElementById('email error').value;
+    // var confirmemail = document.getElementById('confirm email');
+    // var confirmemailerror = document.getElementById('confirm email error');
+    // var phonenumber = document.getElementById('phonenumber').value;
+    // var phonenumbererror = document.getElementById('phonenumber error').value;
+    // var dateofbirth = document.getElementById('dateofbirth').value;
+    // var dateofbirtherror = document.getElementById('date error').value;
+    // var password = document.getElementById('password').value;
+    // var passworderror = document.getElementById('password error').value;
+    // var confirmpassword = document.getElementById('confirmpassword');
+    // var confirmpassworderror = document.getElementById('confirm password error');
+    
+   
+    const register = document.querySelector('#Register');
+      register.addEventListener('click',function(e){
+      e.preventDefault();
+    })
+    let users ;
+    
+  if(localStorage.users!=null){
+    users = JSON.parse(localStorage.users);
+  }
+   else {
+  users = [{
+    firstName: "Admin",
+           lastName: "Admin",
+           username: "Admin",
+           email: "Admin@admin.com",
+           password: "admin123",
+  }]
+   }
+  
+   
+   const savetolocalstorage=()=>{
+       var password = document.getElementById('password');
+       var username = document.getElementById("username").value;
+      var usernameerror = document.getElementById('username error');
+      var firstname = document.getElementById('firstname').value;
+      var firstnameerror = document.getElementById('firstname error');
+      var lastname = document.getElementById('lastname').value;
+      var lastnameerror = document.getElementById('lastname error');
+      var email = document.getElementById('email').value;
+      var emailerror = document.getElementById('email error');
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      var email=document.getElementById('email').value
+      var confirmemail = document.getElementById('confirm email').value;
+      var confirmemailerror = document.getElementById('confrimemailerror');
+      var password = document.getElementById('password').value;
+      var password = document.getElementById('password').value;
+      var confirmpassword = document.getElementById('confirm password').value;
+      var confirmpassworderror = document.getElementById('confirmpassworderror');
+      var phonenumber= document.getElementById("phonenumber").value;
+      var phonenumbererror = document.getElementById("phonenumber error");
+    if(username==null||username==""){
+    var errormsg=("username cant be empty");
+    usernameerror.innerHTML=errormsg;  
+    return;
+    }
+    else if (!/^[a-zA-Z]+$/.test(username) ) {
+      var errormsg=("username can only be letters");
+    usernameerror.innerHTML=errormsg;
+    return;
+    } 
+    usernameerror.innerHTML="";
+    if (firstname == null || firstname == ""||lastname == null || lastname == "" ) {
+      var errormsg="name cant be empty";
+      firstnameerror.innerHTML=errormsg;
+      return;
+      }
+  
+       else if (!/^[a-zA-Z]+$/.test(firstname)||!/^[a-zA-Z]+$/.test(lastname) ){
+        var errormsg="name can be only letters";
+        firstnameerror.innerHTML=errormsg;
+         return;
+       }
+       firstnameerror.innerHTML="";
+       
+ if (email==null||email==""){
+  var errormsg="email cant be empty";
+  emailerror.innerHTML=errormsg;
+  return;
+ }
+ else if (!/^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/){
+  var errormsg = "email not valid";
+  emailerror.innerHTML=errormsg;
+  return;
+ }
+ emailerror.innerHTML="";
+ 
+if(email!=confirmemail){
+  var errormsg = "doesnt match the email";
+  confirmemailerror.innerHTML=errormsg;
+  return;
+}
+confirmemailerror.innerHTML="";
+
+        var passworderror = document.getElementById('password error');
+        if(password==null||password==""){
+          var errormsg="password cant be empty";
+          passworderror.innerHTML=errormsg; 
+          return;
+        }
+        passworderror.innerHTML="";
+        
+     if(password!=confirmpassword){
+      var errormsg = "doesnt match password";
+      confirmpassworderror.innerHTML=errormsg;
+      return;
+     }
+     confirmpassworderror.innerHTML="";
+     
+        if(phonenumber==null||phonenumber==""){
+          var errormsg= "phone number cant be empty";
+          phonenumbererror.innerHTML=errormsg;
+          return;
+        }
+        phonenumbererror.innerHTML="";
+
+       var username = document.getElementById("username");
+       var firstname = document.getElementById('firstname');
+       var lastname = document.getElementById('lastname');
+       var email = document.getElementById('email');
+       var password = document.getElementById('password');
+       
+  
+       console.log(password.value)
+       let user = {
+           firstName: firstname.value,
+           lastName: lastname.value,
+           username: username.value,
+           email: email.value,
+           password: password.value,
+        };
+        
+        users.push(user);
+        console.log('hamada');
+              localStorage.setItem('users', JSON.stringify(users));
+              let msg=confirm("Registration done ...login?");
+    let ans = msg?location.assign('../Login/login.html'):location.assign('../main page/index.html');
+    
+
+    }
+    
+
+      function validation(){
+  
+     savetolocalstorage();
+     
+        }
+      
+      
+  </script>
+  
+  </body>
+ 
+  
+</html>
